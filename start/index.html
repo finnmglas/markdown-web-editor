@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Learn Markdown</title>
+  <meta charset="utf-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.28.0/codemirror.min.js"></script>
+  <script src="/dist/app.js"></script>
+  <link rel="shortcut icon" href="https://assets.finnmglas.com/i/logo/" type="image/png">
+  <link rel="stylesheet" href="https://assets.finnmglas.com/l/fontawesome/css/fontawesome.min.css?v=v5.13.0">
+</head>
+<body>
+  <div class="editor">
+    <textarea id="input"><a id="top"></a><small>[<i class="fas fa-arrow-left"></i> Back to start](/) <span style="float:right;">**Markdown Cheatsheet**</span></small>
+
+# Markdown Cheatsheet <i class="fab fa-markdown"></i>
+
+Markdown (Md) is a markup language, like HTML, with the advantage that it's easily readable. It is often used for software documentation (in so-called [README](/readme/) files), sometimes also to create websites (for example using [HugoCMS](https://gohugo.io/)).
+
+---
+
+### Overview:
+
+1. [Headings](#headings)
+2. [Text Formatting](#formatting)
+3. [Links and Anchors](#links)
+4. [Lists (3 Types)](#lists)
+5. [Images](#images)
+6. [Codeboxes](#code)
+7. [Tables](#tables)
+8. [Further Info](#further)
+
+---
+
+<a id="headings"></a>
+## 1 - Headings
+<small>[<i class="fas fa-arrow-up"></i> Back to top](#top)</small>
+
+To structure your texts:
+
+```md
+# Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5
+###### Heading 6
+```
+
+<a id="formatting"></a>
+## 2 - Formatting
+<small>[<i class="fas fa-arrow-up"></i> Back to top](#top)</small>
+
+### 2.1 - Formatting Text
+
+Here's a few ways to make words or phrases stand out:
+
+| Type | Markdown |
+|--------|---------|
+| **Bold text** | `**Bold text**` or `__Bold text__` |
+| _Cursive text_ | `_Cursive text_` or `*Cursive text*` |
+| ***Bold and cursive*** | `***Bold and cursive text***` or `___Bold and cursive___` |
+| ~~Struck text~~ | `~Struck text~~`|
+| <blockquote style="margin:0">Quoted text</blockquote> | `> Quoted text`|
+| Horizontal line | `---`|
+
+### 2.2 - Using Icons and Emojis
+
+#### 2.2.1 - GitHub Icons
+
+On GitHub, icons are written like this:
+
+```md
+Rocket      :rocket:
+Thumbs up   :+1:
+```
+
+You can search them [here](https://emojipedia.org/github/) or just type `:` in GitHub to get suggestions.
+
+#### 2.2.2 - FontAwesome
+
+In this Markdown editor, GitHub emojis do not work - however, I have included FontAwesome (rather uncommon in Markdown). These icons are written like this (HTML):
+
+```md
+<i class="fab fa-github"></i>
+```
+
+Find more icons on [fontawesome.com](https://fontawesome.com/).
+
+<a id="links"></a>
+## 3 - Links and Anchors
+<small>[<i class="fas fa-arrow-up"></i> Back to top](#top)</small>
+
+### 3.1 - Links
+
+You can only create links that open in the same window.
+
+```md
+[external link](https://link-location.com)
+[relative link](/markdown/)
+```
+
+If you wish to link to the same page more than once:
+
+```md
+[Link one][location] and [Link two][location].
+
+  [location]: https://link-location.com
+```
+
+### 3.2 - Anchors
+
+Anchor links often are automatically generated next to your headings:
+
+```
+# Heading
+
+[anchor link to heading](#heading)
+```
+
+If you find out they are not created automatically, just solve it like this:
+
+
+```
+<a id="heading"></a>
+# Heading
+
+[anchor link to heading](#heading)
+```
+
+<a id="lists"></a>
+## 4 - Lists
+<small>[<i class="fas fa-arrow-up"></i> Back to top](#top)</small>
+
+Those are pretty useful, there's three types:
+
+### 4.1 - Ordered lists
+
+```md
+1. First item
+  1. First sub- of first item
+  2. Second sub- of first item
+2. Second item
+3. Third item
+```
+
+### 4.2 - Unordered lists
+
+```md
++ First item
+  + First sub- of first item
+  + Second sub- of first item
++ Second item
++ Third item
+```
+
+You can also use a minus (`-`) instead of the plus (`+`).
+
+### 4.3 - To-do lists
+
+In many cases, you can also create To-do lists using Markdown. This doesn't work here, however, on GitHub it does.
+
+```md
+- [x] Done
+- [ ] ToDo
+- [ ] ToDo
+```
+
+<a id="images"></a>
+## 5 - Images
+<small>[<i class="fas fa-arrow-up"></i> Back to top](#top)</small>
+
+Of course, you can also include images in Markdown:
+
+```
+![Finn's Logo](https://assets.finnmglas.com/i/logo/)
+```
+
+It looks like a link but you put an exclamation mark in front.
+
+The text (here: `Finn's Logo`) is used as the image's alt text. That means it will only be displayed when the image can't be loaded.
+
+<a id="code"></a>
+## 6 - Code
+<small>[<i class="fas fa-arrow-up"></i> Back to top](#top)</small>
+
+For statements and function names you wish to write in Markdown, just enclose the code in backticks: `` `module.run()` ``
+
+You can put multi-line code in so-called codeboxes (three backticks):
+
+````md
+```
+This is a codebox.
+```
+````
+
+To apply syntax formatting, also write down the language name:
+
+````md
+```python
+# Python code in here
+
+import module
+
+module.function
+```
+````
+
+The examples above are actually a codeboxes within codeboxes.
+
+<a id="tables"></a>
+## 7 - Tables
+<small>[<i class="fas fa-arrow-up"></i> Back to top](#top)</small>
+
+Tables are not availible in every kind of Markdown - on GitHub however, you can use them.
+
+You can write them like this:
+
+```md
+| header | header |
+|--------|---------|
+| content | content |
+| content | content |
+| content | content |
+```
+
+You can also use table generators (like [this one](https://ozh.github.io/ascii-tables/)) to create them.
+
+<a id="further"></a>
+## 8 - Further Information
+<small>[<i class="fas fa-arrow-up"></i> Back to top](#top)</small>
+
+### 8.1 - Rendering Markdown
+
+Markdown is usually converted to HTML before being displayed on your screen. This is why (in many cases) you can use HTML syntax within your Markdown file.
+
+This, however, reduces readability and is sometimes disabled for security reasons.
+
+### 8.2 - Markdown Flavours
+
+There's many different flavours of Markdown, so it's best if you just try out what works best on the platform of your choice.
+
+Common flavours include CommonMark and GitHub flavoured markdown.
+
+Some flavours also support LaTech formatting (mathematical formulas).
+
+---
+
+You're ready! Go [create a README](/readme/) for your project!
+
+---
+
+<br>
+
+</textarea>
+  </div>
+  <div class="markdown-body" id="output"></div>
+</body>
+</html>
