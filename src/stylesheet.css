@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono:300,400,500,700');
 
 html, body {
 	margin: 0;
@@ -6,7 +6,7 @@ html, body {
 }
 
 body {
-	font-family: 'Roboto Mono', Menlo, Monaco, Consolas, monospace;
+	font-family: 'Ubuntu Mono', Menlo, Monaco, Consolas, monospace;
 	display: flex;
 	height: 100vh;
 }
@@ -21,7 +21,9 @@ body {
 	padding: 1em;
 	box-sizing: border-box;
 }
-
+.editor {
+	padding: 0 1em;
+}
 .CodeMirror {
 	height: 100%;
     font-family: inherit;
@@ -56,4 +58,51 @@ body {
 
 .hljs-string {
     color: #183691;
+}
+
+/* Smooth scrolling */
+
+#output {
+	scroll-behavior: smooth;
+}
+
+/* Responsiveness */
+
+#mobile-editor-toggle {
+	position:fixed;
+	width: 70px;
+	height: 70px;
+	bottom: 30px;
+	right: 30px;
+	background-color: #1e2bbf;
+	color: #FFF;
+	border-radius: 50%;
+	text-align: center;
+	font-size: 20px;
+	border: none;
+	z-index: 100;
+}
+
+@media screen and (max-width: 768px) {
+	.editor, .markdown-body {
+		flex-basis: 100%;
+		width: 100%;
+	}
+	.editor {
+		padding: 0;
+		padding-left: 1em;
+		margin: 0;
+	}
+	#mobile-editor-toggle {
+		display: block;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.editor, .markdown-body {
+		display: block !important;
+	}
+	#mobile-editor-toggle {
+		display: none;
+	}
 }

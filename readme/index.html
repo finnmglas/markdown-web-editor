@@ -21,10 +21,9 @@
   <script src="/dist/app.js"></script>
   <!-- STYLES -->
   <link rel="stylesheet" href="https://assets.finnmglas.com/l/fontawesome/css/fontawesome.min.css?v=v5.13.0">
-  <style> #output { scroll-behavior: smooth; } </style>
 </head>
 <body>
-  <div class="editor">
+  <div class="editor" id="editor">
     <textarea id="input"><small>[<i class="fas fa-arrow-left"></i> Back to start](/) <span style="float:right;">**Create a README**</span></small>
 
 ---
@@ -67,5 +66,6 @@ Please make sure to update tests as appropriate.
 </textarea>
   </div>
   <div class="markdown-body" id="output"></div>
+  <button id="mobile-editor-toggle" title="Toggle Editor"></button>
 </body>
 </html>

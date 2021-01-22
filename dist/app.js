@@ -10066,7 +10066,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+// Initalise variables
+var editorDisplayed = false;
+
 document.addEventListener('DOMContentLoaded', () => {
+	// Editor and Md rendering
 	const output = document.getElementById('output')
 	const editor = __WEBPACK_IMPORTED_MODULE_6_codemirror___default.a.fromTextArea(document.getElementById('input'), {
 		mode: 'markdown',
@@ -10089,7 +10093,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	output.innerHTML = __WEBPACK_IMPORTED_MODULE_5_marked___default()(editor.getValue())
 	highlightCode()
+
+	// Mobile editor toggle
+	const btn = document.getElementById("mobile-editor-toggle");
+	const edt = document.getElementById("editor");
+	const viewer = document.getElementById("output");
+
+	viewer.style.display = "block";
+	edt.style.display = "none";
+	btn.innerHTML = '<i class="fas fa-pen"></i>';
+
+	btn.onclick = function() {
+		editorDisplayed = !editorDisplayed;
+		if (editorDisplayed) { // show editor
+			viewer.style.display = "none";
+			edt.style.display = "block";
+			btn.innerHTML = '<i class="fas fa-eye"></i>';
+		} else { // hide editor
+			viewer.style.display = "block";
+			edt.style.display = "none";
+			btn.innerHTML = '<i class="fas fa-pen"></i>';
+		}
+	};
 })
+
 
 /***/ }),
 /* 5 */
@@ -10403,10 +10430,10 @@ if(false) {
 
 exports = module.exports = __webpack_require__(0)(undefined);
 // imports
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,700);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:300,400,500,700);", ""]);
 
 // module
-exports.push([module.i, "html, body {\n\tmargin: 0;\n\tpadding: 0;\n}\n\nbody {\n\tfont-family: 'Roboto Mono', Menlo, Monaco, Consolas, monospace;\n\tdisplay: flex;\n\theight: 100vh;\n}\n\n.editor, .markdown-body {\n\tflex-grow: 0;\n\tflex-shrink: 0;\n\tflex-basis: 50%;\n\twidth: 50%;\n\theight: 100vh;\n\toverflow: auto;\n\tpadding: 1em;\n\tbox-sizing: border-box;\n}\n\n.CodeMirror {\n\theight: 100%;\n    font-family: inherit;\n    font-weight: 300;\n    font-size: 16px;\n    line-height: 1.6;\n}\n\n.hljs-attr {\n    color: #63a35c;\n}\n\n.hljs-meta {\n    color: inherit;\n    font-weight: inherit;\n}\n\n.hljs-comment, .hljs-quote {\n    color: #969896;\n    font-style: normal;\n}\n\n.hljs-keyword {\n    color: #a71d5d;\n    font-weight: inherit;\n}\n\n.hljs-title {\n    color: #0086b3;\n    font-weight: inherit;\n}\n\n.hljs-string {\n    color: #183691;\n}", ""]);
+exports.push([module.i, "html, body {\n\tmargin: 0;\n\tpadding: 0;\n}\n\nbody {\n\tfont-family: 'Ubuntu Mono', Menlo, Monaco, Consolas, monospace;\n\tdisplay: flex;\n\theight: 100vh;\n}\n\n.editor, .markdown-body {\n\tflex-grow: 0;\n\tflex-shrink: 0;\n\tflex-basis: 50%;\n\twidth: 50%;\n\theight: 100vh;\n\toverflow: auto;\n\tpadding: 1em;\n\tbox-sizing: border-box;\n}\n.editor {\n\tpadding: 0 1em;\n}\n.CodeMirror {\n\theight: 100%;\n    font-family: inherit;\n    font-weight: 300;\n    font-size: 16px;\n    line-height: 1.6;\n}\n\n.hljs-attr {\n    color: #63a35c;\n}\n\n.hljs-meta {\n    color: inherit;\n    font-weight: inherit;\n}\n\n.hljs-comment, .hljs-quote {\n    color: #969896;\n    font-style: normal;\n}\n\n.hljs-keyword {\n    color: #a71d5d;\n    font-weight: inherit;\n}\n\n.hljs-title {\n    color: #0086b3;\n    font-weight: inherit;\n}\n\n.hljs-string {\n    color: #183691;\n}\n\n/* Smooth scrolling */\n\n#output {\n\tscroll-behavior: smooth;\n}\n\n/* Responsiveness */\n\n#mobile-editor-toggle {\n\tposition:fixed;\n\twidth: 70px;\n\theight: 70px;\n\tbottom: 30px;\n\tright: 30px;\n\tbackground-color: #1e2bbf;\n\tcolor: #FFF;\n\tborder-radius: 50%;\n\ttext-align: center;\n\tfont-size: 20px;\n\tborder: none;\n\tz-index: 100;\n}\n\n@media screen and (max-width: 768px) {\n\t.editor, .markdown-body {\n\t\tflex-basis: 100%;\n\t\twidth: 100%;\n\t}\n\t.editor {\n\t\tpadding: 0;\n\t\tpadding-left: 1em;\n\t\tmargin: 0;\n\t}\n\t#mobile-editor-toggle {\n\t\tdisplay: block;\n\t}\n}\n\n@media screen and (min-width: 768px) {\n\t.editor, .markdown-body {\n\t\tdisplay: block !important;\n\t}\n\t#mobile-editor-toggle {\n\t\tdisplay: none;\n\t}\n}\n", ""]);
 
 // exports
 

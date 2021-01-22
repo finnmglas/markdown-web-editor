@@ -21,10 +21,9 @@
   <script src="/dist/app.js"></script>
   <!-- STYLES -->
   <link rel="stylesheet" href="https://assets.finnmglas.com/l/fontawesome/css/fontawesome.min.css?v=v5.13.0">
-  <style> #output { scroll-behavior: smooth; } </style>
 </head>
 <body>
-  <div class="editor">
+  <div class="editor" id="editor">
     <textarea id="input"># Markdown Editor
 
 This is a simple markdown editor for your browser.
@@ -33,7 +32,8 @@ This is a simple markdown editor for your browser.
 
 + [Learn Markdown](/start/),
 + [Create a README](/readme/),
-+ ... or just use the editor : )
++ [Tweet about this tool][tweet],
++ ... or just use the editor!
 
 ---
 
@@ -45,8 +45,10 @@ Created by [@finnmglas][twitter-finnmglas] and [@loilo][twitter-loilo], MIT lice
   [source]: https://github.com/finnmglas/markdown-web-editor
   [twitter-loilo]: https://twitter.com/loilo92
   [twitter-finnmglas]: https://twitter.com/finnmglas
+  [tweet]: https://twitter.com/intent/tweet?source=https%3A%2F%2Fmarkdown.finnmglas.com%2F&text=Edit,%20Render%20and%20Learn%20Markdown%20using%20this%20web-tool:%20https%3A%2F%2Fmarkdown.finnmglas.com%20by%20@finnmglas
 </textarea>
   </div>
   <div class="markdown-body" id="output"></div>
+  <button id="mobile-editor-toggle" title="Toggle Editor"></button>
 </body>
 </html>
