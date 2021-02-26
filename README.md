@@ -1,12 +1,12 @@
 # Markdown Editor
 
-This is a simple markdown editor for your browser ([open editor](https://markdown.finnmglas.com/)).
+This is a simple markdown editor for your browser ([open editor](https://finnmglas.github.io/markdown-web-editor/)).
 
 ### Things you can do here
 
-+ [Learn Markdown](https://markdown.finnmglas.com/start/),
-+ [Create a README](https://markdown.finnmglas.com/readme/),
-+ ... or just use [the editor](https://markdown.finnmglas.com/) : )
++ [Learn Markdown](https://finnmglas.github.io/markdown-web-editor/start/),
++ [Create a README](https://finnmglas.github.io/markdown-web-editor/readme/),
++ ... or just use [the editor](https://finnmglas.github.io/markdown-web-editor/) : )
 
 ---
 
